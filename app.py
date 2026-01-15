@@ -3,6 +3,7 @@ import streamlit as st
 
 from logic_utils import (
     get_range_for_difficulty,
+    get_attempt_limit,
     parse_guess,
     check_guess,
     update_score,
@@ -20,13 +21,8 @@ difficulty = st.sidebar.selectbox(
     ["Easy", "Normal", "Hard"],
     index=1,
 )
-
-attempt_limit_map = {
-    "Easy": 6,
-    "Normal": 8,
-    "Hard": 5,
-}
-attempt_limit = attempt_limit_map[difficulty]
+#FIX: Refactor logic into logic_utils.py with Copilot
+attempt_limit = get_attempt_limit(difficulty)
 
 low, high = get_range_for_difficulty(difficulty)
 
@@ -50,8 +46,10 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
+#Info should show the low and high range based on difficulty
+#FIX: Update info to reflect current range
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -77,7 +75,8 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    low, high = get_range_for_difficulty(difficulty)
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 
@@ -98,11 +97,8 @@ if submit:
         st.error(err)
     else:
         st.session_state.history.append(guess_int)
-
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        #convert secret to int for comparison
+        secret = int(st.session_state.secret)
 
         outcome, message = check_guess(guess_int, secret)
 

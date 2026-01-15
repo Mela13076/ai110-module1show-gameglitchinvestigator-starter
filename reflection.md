@@ -8,7 +8,13 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
----
+1. When entering a guess (50) and the secret is 52 it told me to go lower, and when i guessed 54 it told me to guess higher
+2. when picking easy it says the range is 1-20 and attepsts 6 but this doesn't change the blue card
+3. when switching difficulty it should do a new game but attempts chagne unless you hit new game.
+4. hard range is 1-50 but normal range is 1-100
+5. when a new game starts the red message is still on the bottom and history still shows the old one. (developer only)
+--- 
+
 
 ## 2. How did you use AI as a teammate?
 
