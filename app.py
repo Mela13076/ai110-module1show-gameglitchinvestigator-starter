@@ -73,8 +73,10 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
+#FIX: New game resets status
 if new_game:
     st.session_state.attempts = 0
+    st.session_state.status = "playing"
     low, high = get_range_for_difficulty(difficulty)
     st.session_state.secret = random.randint(low, high)
     st.success("New game started.")

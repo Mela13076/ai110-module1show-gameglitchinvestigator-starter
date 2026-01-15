@@ -22,6 +22,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion you accepted and why.
 - Give one example of an AI suggestion you changed or rejected and why.
 
+1. I used Copilot ask and agent mode. 
+2. One example of AI suggestion I accepted was moving game logic fully into the logic_utils.py file. It did a great job at picking out any logic, even small and moving it to a different file. 
+2. One example of an AI suggestion I rejected was it trying to rewrite a whole function, the change wasn't needed when only one line was the problem. 
 ---
 
 ## 3. Debugging and testing your fixes
@@ -31,6 +34,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+1. Once I would fix a bug or Copilot fixed a bug I would run the app again and test if the game fix was implemented or not. 
+2. Yes, AI created a text file I can use to test out the logic utils to make sure the functions are working correctly. 
 ---
 
 ## 4. What did you learn about Streamlit and state?
@@ -47,3 +52,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+1. I perfer ask mode and not agent mode so I can understand the issues and attempt to fix on my own. 
+2. I would use only agent mode. 
+3. This made me realize that using AI isn't always correct when solving fixes. 
