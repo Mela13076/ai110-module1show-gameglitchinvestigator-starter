@@ -73,6 +73,11 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
+# Display guess history table
+if st.session_state.history:
+    st.subheader("📊 Guess History")
+    st.dataframe(st.session_state.history, width="stretch")
+
 #FIX: New game resets status
 if new_game:
     st.session_state.attempts = 0
